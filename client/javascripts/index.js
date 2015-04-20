@@ -42,7 +42,7 @@ function fetchDanmus(){
             setTimeout(function(){
               danmu.color = '0x' + parseInt(danmu.color).toString(16);
               cm.send(danmu);
-            }, Math.random() * 10000 + 3000);
+            }, Math.random() * 100000 + 3000);
           })(danmu);
         });
       }
