@@ -7,7 +7,6 @@ body{
   position: absolute;
   top: 0%;
   left: 0%;
-
 }
 
 #stage{
@@ -22,10 +21,22 @@ form {
   position: absolute;
   bottom: 0;
   z-index: 99999;
+  right: 0;
 }
 
 input {
-  outline-color: #a36522;
+  border: 2px solid #3f3b2c;
+  border-radius: 30px;
+  width: 388px;
+  height: 32px;
+  outline: 0;
+  padding: 0;
+}
+
+#send {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 
 button {
