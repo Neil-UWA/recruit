@@ -1,11 +1,11 @@
 // CommentCoreLibrary (//github.com/jabbany/CommentCoreLibrary) - Licensed under the MIT license
 
 $(document).on('ready', function(){
-  $('#msg').width($('#background').width()*0.30);
+  $('#msg').width($('#background').width()*0.20);
   $('#msg').height($('#send').height()*0.8);
 
   $(window).on('resize', function(e){
-    $('#msg').width($('#background').width()*0.30);
+    $('#msg').width($('#background').width()*0.20);
     $('#msg').height($('#send').height()*0.8);
   });
 
