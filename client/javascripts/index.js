@@ -1,5 +1,10 @@
 // CommentCoreLibrary (//github.com/jabbany/CommentCoreLibrary) - Licensed under the MIT license
 
+$('#msg').width($('#background').width());
+$(window).on('resize', function(e){
+  $('#msg').width($('#background').width());
+});
+
 var socket = io();
 var cm = new CommentManager(document.getElementById('danmu'));
 
