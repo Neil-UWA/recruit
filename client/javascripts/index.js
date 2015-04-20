@@ -41,7 +41,7 @@ $(document).on('ready', function(){
   function fetchDanmus(){
     if(!cm.runline.length){
       $.ajax({
-        url: window.location.href + 'api/danmus?filter=%7B%22order%22%3A%20%22stime%20DESC%22%7D',
+        url: window.location.origin + '/api/danmus?filter=%7B%22order%22%3A%20%22stime%20DESC%22%7D',
         success: function(data){
           data.forEach(function(danmu){
             (function(danmu){
