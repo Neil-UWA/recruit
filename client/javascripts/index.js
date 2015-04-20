@@ -13,16 +13,38 @@ socket.on('danmu', function(danmu){
   cm.send(danmu);
 });
 
-document.getElementsByTagName('form')[0].addEventListener('submit', function(e){
+$('form').on('submit', function(e){
   e.preventDefault();
-  var input = document.getElementById('msg');
   var danmu = {
     "mode": 1,
-    "stime": Date.now + 10,
+    "stime": + 10,
     "size": 25,
-    "color": 0xffffff,
-    "text": input.value,
+    "color": "0xffffff",
+    "text": $('#msg').val(),
   }
-  input.value = '';
+  $('#msg').val('');
   socket.emit('danmu', danmu);
-}, false);
+  $.post(window.location.href + 'api/danmus', danmu)
+});
+
+function fetchDanmus(){
+  if(!cm.runline.length){
+    $.ajax({
+      url: window.location.href + 'api/danmus',
+      success: function(data){
+        data.forEach(function(danmu){
+          (function(danmu){
+            setTimeout(function(){
+              danmu.color = '0x' + parseInt(danmu.color).toString(16);
+              cm.send(danmu);
+            }, Math.random() * 10000 + 3000);
+          })(danmu);
+        });
+      }
+    });
+  }else {
+    return;
+  }
+}
+
+setInterval(fetchDanmus, 10000);
