@@ -58,5 +58,5 @@ $(document).on('ready', function(){
     }
   }
 
-  setInterval(fetchDanmus, 10000);
+  setInterval(fetchDanmus, 5000);
 });
