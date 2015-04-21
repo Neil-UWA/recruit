@@ -30,7 +30,7 @@ input {
   width: 388px;
   height: 32px;
   outline: 0;
-  padding: 0;
+  padding-left: 20px;
 }
 
 #send {
