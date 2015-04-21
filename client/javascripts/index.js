@@ -39,23 +39,21 @@ $(document).on('ready', function(){
   $('form').on('submit', sendDanmu);
 
   function fetchDanmus(){
-    if(!cm.runline.length){
-      $.ajax({
-        url: window.location.origin + '/api/danmus?filter=%7B%22order%22%3A%20%22stime%20DESC%22%7D',
-        success: function(data){
-          data.forEach(function(danmu){
-            (function(danmu){
-              setTimeout(function(){
-                danmu.color = '0x' + parseInt(danmu.color).toString(16);
-                cm.send(danmu);
-              }, Math.random() * 100000 + 3000);
-            })(danmu);
-          });
-        }
-      });
-    }else {
-      return;
-    }
+    if (cm.runline.length) {return;}
+
+    $.ajax({
+      url: window.location.origin + '/api/danmus?filter=%7B%22order%22%3A%20%22stime%20DESC%22%7D',
+      success: function(data){
+        data.forEach(function(danmu){
+          (function(danmu){
+            setTimeout(function(){
+              danmu.color = '0x' + parseInt(danmu.color).toString(16);
+              cm.send(danmu);
+            }, Math.random() * 100000 + 3000);
+          })(danmu);
+        });
+      }
+    });
   }
 
   setInterval(fetchDanmus, 5000);
