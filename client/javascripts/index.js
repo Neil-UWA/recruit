@@ -7,9 +7,22 @@ $(document).on('ready', function(){
     $('#msg').height($('#send').height()*0.8);
   });
 
+  $('#background').on('load', function(){
+    $('#stage').height($('#background').height());
+  });
+
+  if ($(document).width() < 1080) {
+    $('#msg').css({width: "80%"});
+  }
+
   $(window).on('resize', function(e){
-    $('#msg').width($('#background').width()*0.20);
+    if ($(document).width() > 1080) {
+      $('#msg').width($('#background').width()*0.20);
+    } else {
+      $('#msg').css({width: "80%"});
+    }
     $('#msg').height($('#send').height()*0.8);
+    $('#stage').height($('#background').height());
   });
 
   var socket = io();
