@@ -27,6 +27,9 @@
       "params": {
         "extended": true
       }
+    },
+    "cookie-parser": {
+      "params":  "abc"
     }
   },
   "routes": {
