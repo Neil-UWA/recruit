@@ -1,12 +1,18 @@
 body{
   overflow: hidden;
   background-color: #DDC4A2;
+  text-align: center;
 }
 
 #foreground {
   position: absolute;
   top: 0%;
   left: 0%;
+}
+
+#background {
+  width: 100%;
+  max-width: 911px;
 }
 
 #stage{
@@ -19,20 +25,16 @@ body{
 
 form {
   text-align: right;
+  position: fixed;
+  right: 0;
+  bottom: 10px;
+  width: 100%;
+  z-index: 99999;
 }
 
 #send {
   display: inline-block;
   vertical-align: middle;
-}
-
-@media (min-width: 1080px) {
-  form {
-    position: absolute;
-    bottom: 0;
-    z-index: 99999;
-    right: 0;
-  }
 }
 
 input {
